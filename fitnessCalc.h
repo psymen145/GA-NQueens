@@ -1,24 +1,18 @@
+#pragma once
 #ifndef fitnessCalc_h
 #define fitnessCalc_h
-
 #include "individual.h"
-#include <vector>
 
 using namespace std;
 
-class Individual;
-
-class fitnessCalc{
+class fitnessCalc {
 public:
-    static int getFitness(Individual individual);
-    static void setSolution(vector<int8_t> newSolution);
-    static int getMaxFitness();
-    void setSolution(string newSolution);
+	static int getFitness(Individual* individual);
+	static void setSolution(string newSolution);
+	static int getMaxFitness();
 private:
-    static vector<int8_t> solution;
+	static string solution;
+	fitnessCalc() {}
 };
 
 #endif
-
-
-

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef INDIVIDUAL_H
 #define INDIVIDUAL_H
 
@@ -5,22 +7,21 @@
 #include <vector>
 #include <iostream>
 #include <time.h>
-#include "fitnessCalc.h"
 
 using namespace std;
 
-class Individual{
+class Individual {
 public:
-    Individual();
-    void generateIndividual();
-    void setGene(int index, char value);
-    char getGene(int index);
-    int getSize();
-    int getFitness();
-    static void setDefaultGeneLength(int length);
+	Individual();
+	void generateIndividual();
+	void setGene(int index, char value);
+	char getGene(int index);
+	int getSize();
+	int getFitness();
+	static void setDefaultGeneLength(int length);
 private:
-    string genes;
-    int fitness = 0;
-    static int defaultGeneLength;
+	string genes;
+	int fitness = 0;
+	static int defaultGeneLength;
 };
 #endif
