@@ -1,3 +1,4 @@
+#pragma once
 #ifndef population_h
 #define population_h
 
@@ -10,13 +11,14 @@ using namespace std;
 
 class Population {
 public:
-    Population(int populationSize, bool initialize);
-    void saveIndividual(int index, Individual indiv);
-    Individual getIndividual(int index);
-    int getTotalFitness();
-    int getSize();
+	Population(int populationSize, bool initialize);
+	void saveIndividual(int index, Individual indiv);
+	Individual getIndividual(int index);
+	int getTotalFitness();
+	int getSize();
+	Individual getFittest();
 private:
-    vector<Individual> individuals;
+	vector<Individual> individuals;
 };
 
 #endif
