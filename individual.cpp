@@ -19,6 +19,10 @@ void Individual::generateIndividual() {
 			genes += '1';
 		}
 	}
+
+	if (fitness == 0) {
+		fitness = fitnessCalc::getFitness((*this));
+	}
 }
 
 void Individual::setGene(int index, char value) {
@@ -48,4 +52,8 @@ int Individual::getFitness() {
 
 void Individual::setDefaultGeneLength(int length) {
 	defaultGeneLength = length;
+}
+
+string Individual::getEntireGene() {
+	return genes;
 }

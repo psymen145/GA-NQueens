@@ -18,6 +18,7 @@ public:
 	int getSize();
 	int getFitness();
 	static void setDefaultGeneLength(int length);
+	string getEntireGene();
 private:
 	string genes;
 	int fitness = 0;

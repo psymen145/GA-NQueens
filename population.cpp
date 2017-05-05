@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "population.h"
 
-Population::Population(int populationSize, bool initialize): individuals(populationSize){
+Population::Population(int populationSize, bool initialize){
 
 	// Initialise population
 	if (initialize) {
@@ -9,14 +9,28 @@ Population::Population(int populationSize, bool initialize): individuals(populat
 		for (int i = 0; i < populationSize; i++) {
 			Individual newIndividual;
 			newIndividual.generateIndividual();
-			saveIndividual(i, newIndividual);
+			saveIndividual(newIndividual);
+		}
+	}
+	else {
+		individuals.clear();
+		for (int i = 0; i < populationSize; i++) {
+			Individual newIndividual;
+			newIndividual.generateIndividual();
+			saveIndividual(newIndividual);
 		}
 	}
 }
 
-void Population::saveIndividual(int index, Individual indiv) {
+void Population::saveIndividual(Individual indiv) {
 
-	individuals.at(index) = indiv;
+	individuals.push_back(indiv);
+}
+
+//for a specific location, used for sorting
+void Population::saveIndividual(int i, Individual indiv) {
+
+	individuals.at(i) = indiv;
 }
 
 Individual Population::getIndividual(int index) {

@@ -20,17 +20,18 @@ int main() {
 	fitnessCalc::setSolution(solution);
 	Individual::setDefaultGeneLength(solution.size());
 
-	Population myPop(10, true);
+	Population myPop(50, true);
 
 	// Evolve our population until we reach an optimum solution
 	int generationCount = 0;
 	while (myPop.getFittest().getFitness() < fitnessCalc::getMaxFitness()) {
 		generationCount++;
-		cout << "Generation: " << generationCount << " Fittest: " << endl;
+		cout << "Generation: " << generationCount << " Fittest: " << myPop.getFittest().getEntireGene() << endl;
 		myPop = Algorithm::evolvePopulation(myPop);
 	}
 
 	cout << "\nSolution found!" << endl;
-	cout << "Generation: " << generationCount << endl;
+	cout << "Generation: " << generationCount + 1 << endl;
+	cout << "Solution: " << myPop.getFittest().getEntireGene() << endl;
 	return 0;
 }

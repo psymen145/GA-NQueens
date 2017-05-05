@@ -12,6 +12,7 @@ using namespace std;
 class Population {
 public:
 	Population(int populationSize, bool initialize);
+	void saveIndividual(Individual indiv);
 	void saveIndividual(int index, Individual indiv);
 	Individual getIndividual(int index);
 	int getTotalFitness();

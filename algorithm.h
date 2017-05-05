@@ -13,7 +13,7 @@ private:
 	static const int tournamentSize = 5;
 	static const bool elitism = true;
 
-	static void mutate(Individual indiv);
+	static void mutate(Individual& indiv);
 	static Individual crossover(Individual indiv1, Individual indiv2);
 	static Individual selection(Population pop);
 	static void sortPopulation(Population& pop);
